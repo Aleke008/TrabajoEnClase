@@ -23,6 +23,7 @@
                         <tr th:each="articulo: ${articulos}">
                             <td th:text="${articulo.descripcion}"></td>
                             <td th:text="${articulo.precio}"></td>
+                            <img th:src="@{${articulo.rutaImagen}}" width="120"/>
                             <td><a th:href="@{/carrito/agregar/} + ${articulo.idArticulo}" th:text="#{accion.agregar}>Agregar</a></td>
                         </tr>
                     </tbody>

@@ -9,7 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
-    //El siguiente mÃ©todo funciona para hacer la auttenticaciÃ³n del usuario
+    //El siguiente método funciona para hacer la auttenticación del usuario
    @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception{
         auth.inMemoryAuthentication()
@@ -42,8 +42,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                 .antMatchers("/articulo/listado", "/categoria/listado",
                              "/cliente/listado")
                     .hasAnyRole("ADMIN","VENDEDOR")
-                .antMatchers("/")
-                    .hasAnyRole("USER","VENDEDOR","ADMIN")
+                .antMatchers("/","/carrito**")
+                .permitAll()
+                .antMatchers("/facturar/carrito")
+                .authenticated()
                 .and()
                     .formLogin()
                     .loginPage("/login")
