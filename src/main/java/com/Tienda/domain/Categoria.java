@@ -21,7 +21,7 @@ public class Categoria implements Serializable{
     @Column(name="id_categoria")
     private Long idCategoria;
     private String description;
-    private boolean activa; 
+    private boolean activo; 
 
 
     public Categoria() {
@@ -29,7 +29,7 @@ public class Categoria implements Serializable{
 
     public Categoria(String description, boolean activa) {
         this.description = description;
-        this.activa = activa;
+        this.activo = activo;
     }
     
        

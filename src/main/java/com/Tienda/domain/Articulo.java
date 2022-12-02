@@ -25,7 +25,7 @@ public class Articulo implements Serializable{
     private String detalle;
     private Double precio;
     private int existencias;
-    private boolean activa; 
+    private boolean activo; 
 
 
     public Articulo() {
@@ -37,7 +37,7 @@ public class Articulo implements Serializable{
         this.detalle = detalle;
         this.precio = precio;
         this.existencias = existencias;
-        this.activa = activa;
+        this.activo = activa;
     }
 
 

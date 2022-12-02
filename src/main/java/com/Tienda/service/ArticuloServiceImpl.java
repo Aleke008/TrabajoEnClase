@@ -17,7 +17,7 @@ public class ArticuloServiceImpl implements ArticuloService {
     @Transactional(readOnly = true)
     public List<Articulo> getArticulo(boolean activos) {
         var lista = (List<Articulo>) articuloDao.findAll();
-        if (activos) {lista.removeIf(e -> e.isActiva());}
+        if (activos) {lista.removeIf(e -> e.isActivo());}
         return lista;
     }
 
